@@ -1,12 +1,8 @@
 Omgneed::Application.routes.draw do
  
-  resources :users, except: :show
+  resources :users
   resources :lists
-  resources :users do
-    collection do
-      get 'news_feed'
-    end
-  end
+
   resources :products
   resource :sessions
   # The priority is based upon order of creation: first created -> highest priority.

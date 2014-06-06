@@ -14,9 +14,6 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require foundation
-//= require angular
-//= require angular-animate
-//= require angular-resource
 //= require_tree .
 
    $("[rel='tooltip']").tooltip();    
