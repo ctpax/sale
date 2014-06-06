@@ -1,0 +1,28 @@
+ <div class="container-fluid">
+   <%= form_tag products_path, :method => 'get' do %>
+      Number: <%= number_field_tag :limit, params[:limit] %>
+      Search: <%= text_field_tag :category, params[:category] %>
+     
+      <%= submit_tag "Search", :name => nil %>
+    <% end %>        
+
+  <div class="row">
+    <% @imports.each do |p| %>
+
+      <div class="col-md-3">            
+        <div class="thumbnail">
+          <div class="caption">
+            <h5><%= p['name'] %></h5>
+            <p>Original Price: <%= p['priceLabel'] %><br>
+            <p>Sale Price: <%= p['salePriceLabel'] %><br>
+            <p><%= percent_off((p['priceLabel'].gsub(/[^\d\.]/, '').to_f), (p['salePriceLabel'].gsub(/[^\d\.]/, '').to_f)).round %>% Savings<br>
+            <h5><center><%= link_to "GO!", p['clickUrl'] %></center></h5>                 
+          </div>
+          <%= image_tag p['image']['sizes']['IPhone']['url'] %>
+        </div>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>

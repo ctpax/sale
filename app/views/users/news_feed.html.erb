@@ -28,24 +28,9 @@
 
           <div class="row">
             <div x-ng-repeat="product in products | filter:searchProduct" class="col-md-3">            
-              <div class="thumbnail">
-                <div ng-show="show" class="caption">
+             
 
-
-                <div class="container">
-                  
-                    <div class="row">
-                        <div class="col-md-3">            
-                            <div class="thumbnail">
-                                <div class="caption">
-
-                                    <h4>Thumbnail Headline</h4>
-                                    <p>short thumbnail description</p>
-                                    <p><a href="" class="label label-danger" rel="tooltip" title="Zoom">Zoom</a>
-                                    <a href="" class="label label-default" rel="tooltip" title="Download now">Download</a></p>
-                                </div>
-
-                                <img ng-mouseenter="show = true" ng-mouseleave="show=false" src="{{product.image.sizes.IPhone.url}}">
+                                <img ng-mouseleave="show=false" src="{{product.image.sizes.IPhone.url}}">
                             </div>
                       </div>
                               
