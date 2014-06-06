@@ -73,7 +73,11 @@ body {
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
+<<<<<<< HEAD
+  height: 400px;
+=======
   height: 550px;
+>>>>>>> master
   background-color:#555;
 }
 .carousel img {
@@ -192,4 +196,6 @@ body {
     text-align:center;
     color:#fff !important;
     z-index:2;
+
 }
+

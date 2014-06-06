@@ -1,57 +1,68 @@
-<div  x-ng-controller='ListsCtrl'>
 
+<div class="container-fluid">
+  <div class="row">		
+    <div x-ng-controller='ListsCtrl'>
+      <section class="main-section">
+        <div class="small-12 columns">
 
+          <button type="button" class="btn btn-lg btn-danger" data-remote="#testDiv" data-animation="am-slide-right" bs-aside="aside" data-container="body">Custom aside
+            <br>
+            <small>(using data-template)</small>
+          </button>
 
-<!--  -->
-                <form ng-submit="saveList();">
-                              <label for="quantity">New List Name:</label>
-                              <input ng-model="newList.name" name="quantity">
-                              <input type="submit" value="Add New List!">
-                            </form>
-                        </li>
-                        
-           
-                            
-                            <li ng-repeat="list in lists track by $index" >{{list.name}}<br />
-                                <li ng-repeat="product in list.products">{{product.name}}</li>
-                            </li>
-                            
-            </ul>
+          <form ng-submit="saveList();">
+            <label for="quantity">New List Name:</label>
+            <input ng-model="newList.name" name="quantity">
+            <input type="submit" value="Add New List!">
+          </form>
+                  
+          <div id="testDiv">
+            <div ng-repeat="list in lists track by $index">{{list.name}}<br />
+              <div ng-repeat="product in list.products">{{product.name}}</div>
+            </div>
+          </div>
 
-        </aside>
+          <br><br>
+        
+          <input ng-model="searchProduct" type="text" class="form-control">           
 
-        <section class="main-section">
-            <div class="small-12 columns">
-
-
-                            <br><br>
-                        
-                            <input ng-model="searchProduct" type="text" class="form-control">
-                            
-                            <ul >
-                                
-                                
-
-    <div class="row">
-        <div x-ng-repeat="product in products | filter:searchProduct" class="col-md-3">            
-            <div class="thumbnail">
+          <div class="row">
+            <div x-ng-repeat="product in products | filter:searchProduct" class="col-md-3">            
+              <div class="thumbnail">
                 <div ng-show="show" class="caption">
-                    <h4>Thumbnail Headline</h4>
-                    <p>short thumbnail description</p>
-                    <p><a href="" class="label label-danger" rel="tooltip" title="Zoom">Zoom</a>
-                    <a href="" class="label label-default" rel="tooltip" title="Download now">Download</a></p>
-                </div>
-                <img ng-mouseenter="show = true" ng-mouseleave="show=false" src="{{product.image.sizes.IPhone.url}}">
-            </div>
-      </div>
-                            
-                            </ul>
 
-                        <p>Stuff at the bottom</p>
-            </div>
+
+                <div class="container">
+                  
+                    <div class="row">
+                        <div class="col-md-3">            
+                            <div class="thumbnail">
+                                <div class="caption">
+
+                                    <h4>Thumbnail Headline</h4>
+                                    <p>short thumbnail description</p>
+                                    <p><a href="" class="label label-danger" rel="tooltip" title="Zoom">Zoom</a>
+                                    <a href="" class="label label-default" rel="tooltip" title="Download now">Download</a></p>
+                                </div>
+
+                                <img ng-mouseenter="show = true" ng-mouseleave="show=false" src="{{product.image.sizes.IPhone.url}}">
+                            </div>
+                      </div>
+                              
+                              
+
+                            <p>Stuff at the bottom</p>
+                      </div>
+                    </div>
+                 </div>
+               </div>
+             </div>
+           </div>
         </div>
         </section>
-
+    </div>
+  </div>
+</div>
 
 <!-- LINE THROUGH -->
 
@@ -71,6 +82,8 @@
                 <img src="http://resources.shopstyle.com/mim/89/d5/89d5438884f865e5fbd1505e7ea4af9b.jpg">
             </div>
       </div>
+  </div>
+
       
     <div class="row">
         <div class="col-md-3">            
@@ -84,6 +97,7 @@
                 <img src="http://lorempixel.com/400/300/sports/2/" alt="...">
             </div>
       </div>
+  </div>
 
     <div class="row">
         <div class="col-md-3">            
@@ -110,7 +124,11 @@
                 <img src="http://lorempixel.com/400/300/sports/4/" alt="...">
             </div>
       </div>        
-        
+    </div>
   </div>
   
-</div><!-- /.container --></div>
+
+  		
+
+</div><!-- /.container -->
+
