@@ -1,4 +1,4 @@
-<div class="off-canvas-wrap" ng-controller="ListsCtrl">
+<div class="off-canvas-wrap" x-ng-controller='ListsCtrl'>
     <div class="inner-wrap">
         <nav class="tab-bar">
             <section class="left-small">
@@ -6,8 +6,14 @@
             </section>
 
             <section class="middle tab-bar-section">
-                <h1 class="title">OffCanvas</h1>
+                <!-- <h1 class="title">OffCanvas</h1> -->
+                  <form ng-submit="saveList();">
+                  <label for="quantity">New List Name:</label>
+                  <input ng-model="newList.name" name="quantity">
+                  <input type="submit" value="Add New List!">
+                </form>
             </section>
+            < /br>
 
             <section class="right-small">
                 <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
@@ -20,16 +26,58 @@
                 <li><a href="#">Left Sidebar</a></li>
             </ul>
         </aside>
+
         <aside class="right-off-canvas-menu">
             <ul class="off-canvas-list">
-                <li><a href="#">Right Sidebar</a></li>
+               <li>
+              
+              </li>
+            
+
+              
+              <li ng-repeat="list in lists track by $index">{{list.name}}<br />
+                <li ng-repeat="product in list.products">{{product.name}}</li>
+              </li>
+              
             </ul>
         </aside>
+
         <section class="main-section">
             <div class="small-12 columns">
-                <h1>How to use</h1>
-                <p>Just use the standard layout for an offcanvas page as documented in the <a href="http://foundation.zurb.com/docs/components/offcanvas.html">foundation docs</a></p>
-                <p>As long as you include mm.foundation.offcanvas it should simply work</p>
+
+
+              <br><br>
+            
+
+               <%= form_tag users_path, :method => 'get' do %>
+          Number: <%= number_field_tag :limit, params[:limit] %>
+          Search: <%= text_field_tag :category, params[:category] %>
+         
+          <%= submit_tag "Search", :name => nil %>
+        <% end %>
+
+              <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+
+                <% @imports.each do |p| %>
+
+                  <li>            
+                    <div class="thumbnail">
+                      <div class="caption">
+                        <h5><%= p['name'] %></h5>
+                        <p>Original Price: <%= p['priceLabel'] %><br>
+                        <p>Sale Price: <%= p['salePriceLabel'] %><br>
+                        <p><%= percent_off((p['priceLabel'].gsub(/[^\d\.]/, '').to_f), (p['salePriceLabel'].gsub(/[^\d\.]/, '').to_f)).round %>% Savings<br>
+                        <h5><center><%= link_to "GO!", p['clickUrl'] %></center></h5>                 
+                      </div>
+                      <%= image_tag p['image']['sizes']['IPhone']['url'] %>
+                    </div>
+                  </li>
+
+                <% end %>
+
+              </ul>
+
+            <p>Stuff at the bottom</p>
             </div>
         </section>
 

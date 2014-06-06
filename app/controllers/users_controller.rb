@@ -14,7 +14,10 @@ class UsersController < ApplicationController
   	@user = User.new
   end
 
-
+  def index
+      @imports = Product.party(params[:limit], params[:category], params[:search])
+      respond_with current_user
+  end
 
   def create
     @user = User.new(user_params)
