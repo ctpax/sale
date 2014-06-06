@@ -20,7 +20,10 @@
 //= require angular-sanitize
 //= require_tree .
 
-  $("[rel='tooltip']").tooltip();    
+  
+
+
+   $("[rel='tooltip']").tooltip();    
  
     $('.thumbnail').hover(
         function(){
@@ -29,6 +32,4 @@
         function(){
             $(this).find('.caption').slideUp(250); //.fadeOut(205)
         }
-    );
-
-
+    ); 
