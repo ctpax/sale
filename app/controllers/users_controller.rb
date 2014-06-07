@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   end
 
   def index
+      
       @imports = Product.party(params[:limit], params[:category], params[:search])
       respond_with current_user
   end
