@@ -13,10 +13,11 @@
  *= require_tree .
  */
 
-  @import "bootstrap";
+ 
 img {
  	max-height: 250px;
  	border-radius: 10px;
+  margin: 0 auto;
  }
 
  .modal-backdrop.am-fade {

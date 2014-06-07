@@ -7,12 +7,52 @@
 
             <section class="middle tab-bar-section">
                 <!-- <h1 class="title">OffCanvas</h1> -->
-                  <form ng-submit="saveList();">
-                  <label for="quantity">New List Name:</label>
-                  <input ng-model="newList.name" name="quantity">
-                  <input type="submit" value="Add New List!">
-                </form>
+                <nav class="top-bar" data-topbar>
+                  <ul class="title-area">
+                    <li class="name">
+                      <h1 class="title">OMGNeed</h1>
+                    </li>
+                  </ul>
+                <ul class="right">
+                  <li class="has-form">
+                    <div class="row collapse">
+                      <%= form_tag users_path, :method => 'get' do %>
+                      <div class="large-8 small-9 columns">
+                        <%= text_field_tag :category, params[:category], placeholder: "search" %>
+                      </div>
+                      <div class="large-4 small-3 columns">
+                        <%= submit_tag "Search", :name => nil, class: "button expand" %>
+                      </div>
+                      <% end %>
+                    </div>
+                  </li>
+                </ul> 
+                <ul class="left">
+                  <li>
+                   <a class="button dropdown" dropdown-toggle="#dropdown-example-2">New list</a>
+                    <ul id="dropdown-example-2" data-dropdown-content class="f-dropdown content">
+                      <li class="has-form">
+                        
+                          <form ng-submit="saveList();">        
+                          <input ng-model="newList.name" placeholder="List Name" autofocus>
+                          <input type="submit" value="Add New List!">
+                          </form>
+                        
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+
+
+
+
+
+                
+                
+               
+                </nav>           
             </section>
+
             < /br>
 
             <section class="right-small">
@@ -29,15 +69,13 @@
 
         <aside class="right-off-canvas-menu">
             <ul class="off-canvas-list">
-               <li>
+               
+               <li><a href="#">Lists for {{users.name}}</a></li>
               
+              <li ng-repeat="list in lists track by $index"><a class="button" ng-href="lists/{{list.id}}">{{list.name}}</a>
               </li>
-            
-
+              <li><a>{{users.email}}</a></li>
               
-              <li ng-repeat="list in lists track by $index">{{list.name}}<br />
-                <li ng-repeat="product in list.products">{{product.name}}</li>
-              </li>
               
             </ul>
         </aside>
@@ -47,14 +85,13 @@
 
 
               <br><br>
-            
+              <form ng-submit="saveList();">
+                  
+                  Name: <input ng-model="newList.name" name="quantity">
+                  <input type="submit" value="Add New List!">
+                </form>
 
-               <%= form_tag users_path, :method => 'get' do %>
-          Number: <%= number_field_tag :limit, params[:limit] %>
-          Search: <%= text_field_tag :category, params[:category] %>
-         
-          <%= submit_tag "Search", :name => nil %>
-        <% end %>
+               
 
               <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
 

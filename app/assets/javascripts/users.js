@@ -56,4 +56,13 @@ $scope.saveList = function() {
       });
     };
 
+    $scope.deleteList = function (list) {
+      list.$delete(function() {
+        position = $scope.lists.indexOf(list);
+        $scope.lists.splice(position, 1);
+      }, function(errors) {
+        $scope.errors = errors.data;
+      });
+    };
+
 }]);
