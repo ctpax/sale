@@ -11,4 +11,17 @@ class ProductsController < ApplicationController
   end
 
 
+   # <%= form_for :product, url: products_path do |f| %>
+   #                          <%= collection_select :page, :list_id, current_user.lists, :id, :name %>
+   #                          <%= f.hidden_field :name, :value => p["name"] %>
+   #                          <%= f.hidden_field :price, :value => p['priceLabel'] %>
+   #                          <%= f.hidden_field :sale_price, :value => p['salePriceLabel'] %>
+   #                          <%= f.hidden_field :brand, :value => p['brand']['name']  %>
+   #                          <%= f.hidden_field :url, :value => p['clickUrl'] %>
+   #                          <%= f.hidden_field :image_url, :value => p['image']['sizes']['IPhone']['url'] %>
+                        
+   #                          <%= f.submit 'add products' %>
+   #                        <% end %>
+
+  
 end

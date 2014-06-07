@@ -15,7 +15,7 @@ omgneedApp.factory('User', ['$resource', function($resource) {
      {update: { method: 'PATCH'}});
 }]);
 
-omgneedApp.factory('Products', ['$resource', function($resource) {
+omgneedApp.factory('Product', ['$resource', function($resource) {
   return $resource('/products/:id',
      {id: '@id'},
      {update: { method: 'PATCH'}});
@@ -27,13 +27,14 @@ omgneedApp.factory('List', ['$resource', function($resource) {
      {update: { method: 'PATCH'}});
 }]);
 
-omgneedApp.controller('ListsCtrl', ['$scope', 'User', 'Products', 'List', function($scope, User, Products, List) {
+omgneedApp.controller('ListsCtrl', ['$scope', 'User', 'Product', 'List', function($scope, User, Product, List) {
 
   $scope.users = [];
   $scope.products = [];
   $scope.lists = [];
 
   $scope.newList = new List();
+  $scope.newProduct = new Product();
 
 User.get(function(users) {
       $scope.users = users;
@@ -43,12 +44,12 @@ List.query(function(lists) {
       $scope.lists = lists;
    });
 
-Products.query(function(products){
+Product.query(function(products){
   $scope.products = products;
 
 });
 
-$scope.saveList = function() {
+    $scope.saveList = function() {
       $scope.newList.$save(function(list) {
         console.log(list);
         $scope.lists.push(list);
@@ -62,6 +63,27 @@ $scope.saveList = function() {
         $scope.lists.splice(position, 1);
       }, function(errors) {
         $scope.errors = errors.data;
+      });
+    };
+
+    $scope.saveProduct = function (product, list) {
+      console.log(list);
+      // var price = parseFloat(product.priceLabel);
+      // var salePrice = parseFloat(product.salePriceLabel);
+      $scope.newProduct = new Product({
+        name: product.name,
+        price: product.priceLabel,
+        sale_price: product.salePriceLabel,
+        brand: product.brand.name,
+        url: product.clickUrl,
+        image_url: product.image.sizes.IPhone.url,
+        list_id: list.id
+      });
+      console.log($scope.newProduct);
+      
+      $scope.newProduct.$save(function(product) {
+        $scope.products.push(product);
+        $scope.newProduct = new Product();
       });
     };
 
