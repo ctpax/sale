@@ -35,6 +35,7 @@ describe UsersController do
 
   describe "GET 'edit'" do
     before do
+      
       @user = User.create! valid_attributes
       get :edit, id: @user.id
     end
@@ -156,7 +157,7 @@ describe UsersController do
       end.to change(User, :count).by(-1)
     end
 
-    xit "should redirect to '#'" do
+    xit "should redirect to " do
       expect(response).to render_template "#"
     end
   end

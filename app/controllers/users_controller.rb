@@ -2,10 +2,9 @@ class UsersController < ApplicationController
   # before_action :set_user, only: [  :edit, :delete]
   respond_to :json, :html
 
-  def news_feed  
-    respond_with current_user
-    #<%= link_to 'add product', pages_path(:page => {:list_id => @list.id, :url => p["name"]}), :method => :post %>
-  end
+ def show
+  set_user
+ end
 
   def edit
   end
@@ -24,7 +23,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
       if @user.save
         respond_to do |format|
-          format.html { redirect_to (news_feed_user_path(@user))}
+          format.html { redirect_to (users_path)}
           format.json { render json: @user, status: :created}
         end
       else
@@ -38,7 +37,7 @@ class UsersController < ApplicationController
   def update
     if current_user.update_attributes(user_params)
        respond_to do |format|
-          format.html { redirect_to "#"}
+          format.html { redirect_to users_path }
           format.json { render nothing: true, status: :no_content}
         end
       else
@@ -66,8 +65,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :name, :email, :password, :password_confirmation)
   end
-
-
-
-
 end
