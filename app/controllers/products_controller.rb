@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
 	respond_to :json, :html
 	def index
+
     #request shopsense api through model method, store response in @import variable 
-		@imports = Product.party(params[:limit], params[:category], params[:search])
+		@imports = Product.party(params[:search], params[:limit], params[:category])
 		respond_with @imports
 	end
 

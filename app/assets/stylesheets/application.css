@@ -174,26 +174,25 @@ body {
 }
 
 
-body {
-  padding-top: 50px;
-}
+
  
 .thumbnail {
     position:relative;
     overflow:hidden;
+    height:250px;
 }
  
 .caption {
     position:absolute;
     top:0;
     right:0;
-    background:rgba(66, 139, 202, 0.75);
+    background:rgba(255, 255, 255, 0.60);
     width:100%;
     height:100%;
     padding:2%;
     display: none;
     text-align:center;
-    color:#fff !important;
+  /*  color:#000 !important;*/
     z-index:2;
 
 }
