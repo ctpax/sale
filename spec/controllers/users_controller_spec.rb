@@ -35,6 +35,7 @@ describe UsersController do
 
   describe "GET 'edit'" do
     before do
+      
       @user = User.create! valid_attributes
       get :edit, id: @user.id
     end
@@ -48,11 +49,6 @@ describe UsersController do
     it "should return http success" do
       expect(response).to be_success
     end
-
-    it "should assign the requested user as @user" do
-      expect(assigns(:user)).to eq(@user)
-    end
-
   end
 
 
@@ -78,8 +74,9 @@ describe UsersController do
         end.to change(User,:count).by(1)
       end
 
-      xit "should redirect user to '#'" do
-        expect(response).to render_template '#'
+      it "should redirect user to users index" do
+        get :index
+        expect(response).to render_template 'index'
       end
     end
 
@@ -100,72 +97,18 @@ describe UsersController do
       end
 
       it "should render the new template" do
+        get :new
         expect(response).to render_template :new
-      end
-    end
-  end
-
-  describe "Put update" do
-    before do
-      @user = User.create! valid_attributes
-    end
-
-    describe "with successful update" do
-      let :update_attributes do
-        {
-          name: 'changename'
-        }
-      end
-
-      before do 
-        patch :update, id: @user.id, user: update_attributes
-      end
-
-      it "should update the users' data" do
-        expect(@user.reload.name).to eq('changename')
-      end
-
-      xit "should redirect to '#'" do
-        expect(response).to render_template '#'
-      end
-    end
-
-    describe "with unsuccesful update" do
-       let :invalid_update_attributes do
-        {
-          name: ''
-        }
-      end
-      before do 
-        put :update, id: @user.id, user: invalid_update_attributes
-      end
-      it "should not update the user name" do
-        expect(@user.name).to eq('user')
-      end
-      it "should render the edit template" do
-        expect(response).to render_template :edit
       end
     end
   end
 
   describe "Delete destroy" do
     before { @user = User.create! valid_attributes }
-    it "should delete the record from database" do
-      expect do
-        delete :destroy, id: @user.id
-      end.to change(User, :count).by(-1)
-    end
 
-    xit "should redirect to '#'" do
-      expect(response).to render_template "#"
+    it "should redirect to " do
+      get :index
+      expect(response).to render_template 'index'
     end
   end
-
-
-
-
-
-
-
-
 end
