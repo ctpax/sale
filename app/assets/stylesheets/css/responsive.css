@@ -50,21 +50,7 @@ and (max-device-width : 1024px) {
 
 }
 
-/***************** TABLETS (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
 
-	.navigation li{ margin-right: 32px; }
-	.service h5{ 1em }
-	.service{ max-height: 154px; }
-	.work-overlay{ padding: 100px 15px 15px 15px; }
-	.work-img-holder{ height: 220px; }
-	#form-name{ width: 70%; }
-	#form-email{ width: 70%; }
-
-}
 
 /***************** TABLETS (landscape) ----------- */
 @media only screen 
