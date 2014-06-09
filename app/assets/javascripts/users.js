@@ -42,12 +42,28 @@ User.get(function(users) {
 
 List.query(function(lists) {
       $scope.lists = lists;
+
    });
 
 Product.query(function(products){
   $scope.products = products;
-
+  
 });
+
+$scope.testHover = function(){
+  $("[rel='tooltip']").tooltip();
+ 
+    $('.thumbnail').hover(
+        function(){
+            $(this).find('.caption').slideDown(250); //.fadeIn(250)
+        },
+        function(){
+            $(this).find('.caption').slideUp(250); //.fadeOut(205)
+        }
+    );
+
+  };
+
 
     $scope.saveList = function() {
       $scope.newList.$save(function(list) {
@@ -84,7 +100,29 @@ Product.query(function(products){
       $scope.newProduct.$save(function(product) {
         $scope.products.push(product);
         $scope.newProduct = new Product();
+        List.query(function(lists) {
+          $scope.lists = lists;
+
+       });
+
       });
     };
+
+    $scope.deleteProduct = function (list, product) {
+
+      console.log($scope.lists[list].products[product]);
+
+      $scope.lists[list].products[product].$delete(function(){
+    
+        // position = lists[list].products[product];
+        $scope.lists[list].products.splice(product, 1);
+      
+      // function(errors) {
+      //   $scope.errors = errors.data;
+      // }
+      });
+    };
+
+    $scope.oneAtATime = true;
 
 }]);
