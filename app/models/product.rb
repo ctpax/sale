@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
 
   def self.party(search, limit, category)
 
-		limit ||= 20
+		limit ||= 80
 
 		auth = { query: { pid: 'uid4689-25055367-8', limit: limit, fl: 'd', sort: 'recency', fts: search}} # Adds to end of URL ?apikey=<YOURKEY>&q=<MOVIE>
 		search_url = "http://api.shopstyle.com/api/v2/products"
