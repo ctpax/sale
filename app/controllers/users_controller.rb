@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :authenticate_user, only: [:index, :edit, :show]
   respond_to :json, :html
 
  def show

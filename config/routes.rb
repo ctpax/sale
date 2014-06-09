@@ -4,7 +4,9 @@ Omgneed::Application.routes.draw do
   resources :lists
 
   resources :products
-  resource :sessions
+  resources :sessions, only: [:new, :create, :destroy]
+
+  root 'users#welcome'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -5,7 +5,7 @@ module SessionsHelper
 
   def authenticate_user
     if !current_user
-      redirect_to new_sessions_path
+      redirect_to new_session_path
     end
   end
 
@@ -13,7 +13,7 @@ module SessionsHelper
     if !current_user
       false
     else
-    	true
+      true
     end
   end
 end

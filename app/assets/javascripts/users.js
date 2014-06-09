@@ -123,6 +123,16 @@ $scope.testHover = function(){
       });
     };
 
+    $scope.search = function(productSearch) {
+      Product.query({ search: productSearch }, function(products) {
+        $scope.products = products;
+      });
+    };
+
+    $scope.product = new Product();
+
     $scope.oneAtATime = true;
+
+    $scope.showDetails = false;
 
 }]);
