@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         redirect_to(news_feed_users_path)
         # flash[:success] ='You successfully logged in'
     else
-        flash[:warning] ='Invalid email/password combination'
+        # flash[:warning] ='Invalid email/password combination'
         render "new"
     end
   end
