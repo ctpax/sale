@@ -3,8 +3,8 @@
   <div class="row">
     <div class="large-4 columns">
       <ul class="navigation hide-for-small">
-        <li><a class="scroll" href="#about-nav">WELCOME</a></li>
         <li><a class="scroll" href="#services-nav">ABOUT</a></li>
+        <li><a class="scroll" href="#work-nav">BRANDS</a></li>
       </ul>
     </div>
     
@@ -35,149 +35,27 @@
   <div class="row">
     <div class="large-12 columns mobile-nav">
       <ul class="navigation">
-        <li><a class="scroll" href="#about-nav">WELCOME</a></li>
-        <li><a class="scroll" href="#services-nav">ABOUT</a></li>
         <li><a class="scroll" href="#work-nav">BRANDS</a></li>
-        <li><a class="scroll" href="sessions/new">LOGIN</a></li>
+        <li><a class="scroll" href="#services-nav">ABOUT</a></li>
+        <% if current_user %>
+            <li><%= link_to "MY FEED", users_path %></li>
+            <li><%= link_to "LOGOUT", session_path(session), method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "SIGN UP", new_user_path %>
+            </li>
+            <li>
+              <%= link_to "SIGN IN", new_session_path %>
+            </li>
+          <% end %>
       </ul>
     </div>
   </div>
 
 </section>
 
-<!-- <section id="home">
 
-   <div id="home-slider"> 
-    <ul class="slides"> 
-        <li> -->
-      <!--     <div class="row">
-            <div class="large-12 columns">
-         
-            
-          </div>
-          <img class="slider-bg" alt="Slider Image" src="http://www.designsnext.com/wp-content/uploads/2014/02/fashion-photography-7.jpg" />
-        </li> -->
-
-      <!--   <li>
-          <div class="row">
-            <div class="large-12 columns">
-              <div class="tile-wrapper">
-                <div class="slider-tile">
-                  <i class="typcn typcn-leaf"></i>
-                  <h5>OMGNEED</h5>
-                  <div class="hr large-1 small-3"></div>
-                  <div class="biline">Your personal real-time shopping newsfeed.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <img class="slider-bg" alt="Slider Image" src="http://www.designsnext.com/wp-content/uploads/2014/02/fashion-photography-7.jpg" />
-        </li> -->
-        
-        
-  <!--     </ul>
-    </div> -->
-
-
-<!-- </section> -->
-
-<!-- <a id="about-nav"></a>
-<section id="about" class="pad-large">
-  <div class="row">
-    <div class="large-12 columns text-center">
-      <div class="page-header pad-bottom">
-        <div class="box-heading">
-          WHO WE ARE
-        </div>
-        <h1>ABOUT US</h1>
-        <div class="hr large-1 small-3"></div>
-      </div>
-    </div> -->
-  <!-- </div>
-  
-  <div class="row">
-    <div class="large-12 columns">
-      <p id="about-text">
-        See the newest arrivals from your favorite stores in one simple newsfeed.
-      </p>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="large-3 columns text-center">
-      <div class="team-member">
-        <div class="team-img-wrapper">
-          <div class="team-img-holder">
-            <img alt="Team Image" src="http://www.designsnext.com/wp-content/uploads/2014/02/fashion-photography-7.jpg" />
-          </div>
-        </div>
-        <h6>TOM BAILEY</h6>
-        <span>Company Director</span>
-        <div class="hr large-2 small-1"></div>
-        <ul class="team-social">
-          <li><a href="#"><i class="typcn typcn-social-twitter-circular"></i></a></li>
-          <li><a href="#"><i class="typcn typcn-social-facebook-circular"></i></a></li>
-          <li><a href="#"><i class="typcn typcn-social-dribbble-circular"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="large-3 columns text-center">
-      <div class="team-member">
-        <div class="team-img-wrapper">
-          <div class="team-img-holder">
-            <img alt="Team Image" src="http://placehold.it/160x160" />
-          </div>
-        </div>
-        <h6>MARK SIMKIN</h6>
-        <span>Graphic Designer</span>
-        <div class="hr large-2 small-1"></div>
-        <ul class="team-social">
-          <li><a href="#"><i class="typcn typcn-social-twitter-circular"></i></a></li>
-          <li><a href="#"><i class="typcn typcn-social-facebook-circular"></i></a></li>
-          <li><a href="#"><i class="typcn typcn-social-dribbble-circular"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="large-3 columns text-center">
-      <div class="team-member">
-        <div class="team-img-wrapper">
-          <div class="team-img-holder">
-            <img alt="Team Image" src="http://placehold.it/160x160" />
-          </div>
-        </div>
-        <h6>ABBY HICKS</h6>
-        <span>Developer</span>
-        <div class="hr large-2 small-1"></div>
-        <ul class="team-social">
-          <li><a href="#"><i class="typcn typcn-social-twitter-circular"></i></a></li>
-          <li><a href="#"><i class="typcn typcn-social-facebook-circular"></i></a></li>
-          <li><a href="#"><i class="typcn typcn-social-dribbble-circular"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="large-3 columns text-center">
-      <div class="team-member">
-        <div class="team-img-wrapper">
-          <div class="team-img-holder">
-            <img alt="Team Image" src="http://placehold.it/160x160" />
-          </div>
-        </div>
-        <h6>TODD MARSH</h6>
-        <span>Super Best Friend</span>
-        <div class="hr large-2 small-1"></div>
-        <ul class="team-social">
-          <li><a href="#"><i class="typcn typcn-social-twitter-circular"></i></a></li>
-          <li><a href="#"><i class="typcn typcn-social-facebook-circular"></i></a></li>
-          <li><a href="#"><i class="typcn typcn-social-dribbble-circular"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    
-  </div>
-</section> -->
 
 <div id="quote-divider" style="background-image: url('http://www.designsnext.com/wp-content/uploads/2014/02/fashion-photography-7.jpg')" >
   <div class="row">
@@ -357,51 +235,6 @@
       </div>
     </div>
   </div>
-  
-  <!-- <div class="row work-row">
-  
-    <div class="large-4 columns">
-      <div class="work-item" data-project-id="project-1">
-        <div class="work-img-holder">
-          <img alt="Work Image" src="http://www.designsnext.com/wp-content/uploads/2014/02/fashion-photography-7.jpg" />
-          <div class="work-overlay">
-            <h6>LOUIS VUITTON</h6>
-            <div class="hr large-2 small-2"></div>
-           
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="large-4 columns">
-      <div class="work-item" data-project-id="project-1">
-        <div class="work-img-holder">
-         <!--  <img alt="Work Image" src="http://nastygal.affiliatetechnology.com/images/logo_01.jpg" /> -->
-    <!--       <img alt="Work Image" src=" http://blog.nastygal.com/wp-content/uploads/2012/07/lais.jpg" />
-         
-          <div class="work-overlay">
-            <h6>N A S T Y   </br>G A L</h6>
-            <dis="hr large-2 small-2"></div>
-            <span>NASTY GAL</span>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    
-<!--     <div class="large-4 columns">
-      <div class="work-item" data-project-id="project-1">
-        <div class="work-img-holder">
-          <img alt="Work Image" src="http://www.wwd.com/images/processed/wwd/2012/08/27/memo-forever21/landscape/02-tout/forever2104.jpg" />
-          <div class="work-overlay">
-            <h6>FOREVER 21</h6>
-            <div class="hr large-2 small-2"></div>
-            <span>FOREVER 21</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </div> --> -->
   
   <div class="row work-row">
   
