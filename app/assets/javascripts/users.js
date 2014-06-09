@@ -126,6 +126,7 @@ $scope.testHover = function(){
     $scope.search = function(productSearch) {
       Product.query({ search: productSearch }, function(products) {
         $scope.products = products;
+
       });
     };
 
@@ -136,3 +137,4 @@ $scope.testHover = function(){
     $scope.showDetails = false;
 
 }]);
+

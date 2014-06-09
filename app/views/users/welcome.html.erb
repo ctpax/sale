@@ -20,10 +20,10 @@
             </li>
           <% else %>
             <li>
-              <a data-toggle="modal" data-target="#userModal" data-remote="<%= new_user_path(current_user) %> #new_user_modal" >Sign Up</a>
+              <%= link_to "SIGN UP", new_user_path %>
             </li>
             <li>
-              <a data-toggle="modal" data-target="#signinModal" data-remote="<%= new_session_path(current_user) %> #new_session_modal">Sign In</a>
+              <%= link_to "SIGN IN", new_session_path %>
             </li>
           <% end %>
       </ul>
@@ -71,7 +71,7 @@
               </div>
             </div>
           </div>
-          <img class="slider-bg" alt="Slider Image" src="http://www.designsnext.com/wp-content/upload/02/fashion-photography-7.jpg" />
+          <img class="slider-bg" alt="Slider Image" src="http://www.designsnext.com/wp-content/uploads/2014/02/fashion-photography-7.jpg" />
         </li> -->
         
         
@@ -280,8 +280,10 @@
   
 </section>
 
-<section id="clients">
-  <div id="clients" style="background-image: url('http://hqscreen.com/wallpapers/l/1440x900/42/lights_gaussian_blur_digital_art_artwork_blurred_1440x900_41392.jpg/')" >
+<section id="clients" style="background-image: url('http://hqscreen.com/wallpapers/l/1440x900/42/lights_gaussian_blur_digital_art_artwork_blurred_1440x900_41392.jpg')">
+
+<div id="clients" style="background-image: url('http://hqscreen.com/wallpapers/l/1440x900/42/lights_gaussian_blur_digital_art_artwork_blurred_1440x900_41392.jpg')" >
+
   <div class="row">
     <div class="large-12 columns text-center">
       <h3 class="text-white">BRANDS THAT YOU LOVE <i class="typcn typcn-heart-outline">&nbsp;</i></h3>
@@ -379,7 +381,7 @@
          
           <div class="work-overlay">
             <h6>N A S T Y   </br>G A L</h6>
-            <div class="hr large-2 small-2"></div>
+            <dis="hr large-2 small-2"></div>
             <span>NASTY GAL</span>
           </div>
         </div>
@@ -390,7 +392,7 @@
       <div class="work-item" data-project-id="project-1">
         <div class="work-img-holder">
           <img alt="Work Image" src="http://www.wwd.com/images/processed/wwd/2012/08/27/memo-forever21/landscape/02-tout/forever2104.jpg" />
-                <div class="work-overlay">
+          <div class="work-overlay">
             <h6>FOREVER 21</h6>
             <div class="hr large-2 small-2"></div>
             <span>FOREVER 21</span>
@@ -529,3 +531,10 @@
   
 
 </section>
+
+
+
+
+  <script>
+    $(document).foundation();
+  </script>
