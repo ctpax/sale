@@ -42,7 +42,7 @@ class UsersController < ApplicationController
         end
       else
         respond_to do |format|
-          format.html { render 'edit' }
+          format.html { render edit_user_path }
           format.json { render json: @user.errors, status: :unprocessable_entity}
         end
     end

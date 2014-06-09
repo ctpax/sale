@@ -116,7 +116,7 @@ describe UsersController do
         {
           name: 'changename'
         }
-      end
+      end  
 
       before do 
         patch :update, id: @user.id, user: update_attributes
