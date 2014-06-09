@@ -123,6 +123,18 @@ $scope.testHover = function(){
       });
     };
 
+    $scope.search = function(productSearch) {
+      Product.query({ search: productSearch }, function(products) {
+        $scope.products = products;
+        // console.log($scope.searchSongs);
+        // $scope.isSongSearched = true;
+      });
+    };
+
+    $scope.product = new Product();
+
     $scope.oneAtATime = true;
+
+    $scope.showDetails = false;
 
 }]);
