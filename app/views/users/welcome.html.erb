@@ -9,14 +9,14 @@
     </div>
     
     <div class="large-4 columns text-center">
-      <a href="index.html"><h5 id="logo">OMG<strong>NEED</strong></h5></a>
+      <a href="/"><h5 id="logo">OMG<strong>NEED</strong></h5></a>
     </div>
     
     <div class="large-4 columns">
       <ul class="navigation hide-for-small">
         <% if current_user %>
             <li><%= link_to "MY FEED", users_path %></li>
-            <li><%= link_to "LOGOUT", root_path, method: :delete %>
+            <li><%= link_to "LOGOUT", session_path(session), method: :delete %>
             </li>
           <% else %>
             <li>
@@ -280,9 +280,9 @@
   
 </section>
 
-<section id="clients" style="background-image: url('http://images.fineartamerica.com/images-medium-large/ocean-background-with-sunset-brandon-bourdages.jpg')">
+<section id="clients" style="background-image: url('http://images.fineartamerica.com/images-medium-large/new-york-city-skyline-sunrise-stephanie-mcdowell.jpg')">
 
-<div id="clients" style="background-image: url('http://images.fineartamerica.com/images-medium-large/ocean-background-with-sunset-brandon-bourdages.jpg')" >
+<div id="clients" style="background-image: url('http://images.fineartamerica.com/images-medium-large/new-york-city-skyline-sunrise-stephanie-mcdowell.jpg')" >
 
   <div class="row">
     <div class="large-12 columns text-center">
@@ -443,6 +443,45 @@
         </div>
       </div>
     </div>
+
+    <div class="large-4 columns">
+      <div class="work-item" data-project-id="project-1">
+        <div class="work-img-holder">
+          <img alt="Work Image" src="http://img4-3.realsimple.timeinc.net/images/1106/urban-outfitters_300.jpg" />
+          <div class="work-overlay">
+            <h6>URBAN OUTFITTERS</h6>
+            <div class="hr large-2 small-2"></div>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="large-4 columns">
+      <div class="work-item" data-project-id="project-1">
+        <div class="work-img-holder">
+          <img alt="Work Image" src="https://1.bp.blogspot.com/-Y0cdEurg8xw/TvrPm88J02I/AAAAAAAABAE/z90ctKWrhHo/s1600/Signature-Master.jpg" />
+          <div class="work-overlay">
+            <h6>JEFFREY CAMPBELL</h6>
+            <div class="hr large-2 small-2"></div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="large-4 columns">
+      <div class="work-item" data-project-id="project-1">
+        <div class="work-img-holder">
+          <img alt="Work Image" src="http://mandarincommunicationsgroup.com/wp-content/uploads/2014/03/Saks_Fifth_Avenue79.png" />
+          <div class="work-overlay">
+            <h6>SAKS FIFTH AVENUE</h6>
+            <div class="hr large-2 small-2"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
     
   </div>
   
@@ -452,17 +491,17 @@
 </section>
 
 <a id="contact-nav"></a>
+<a id="contact-nav"></a>
 <section id="contact">
 
- <!--  <iframe src="https://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=national+park&amp;aq=&amp;sll=-34.535056,138.949971&amp;sspn=0.016209,0.019248&amp;ie=UTF8&amp;hq=&amp;hnear=National+Park+Tasmania&amp;ll=-42.681257,146.729311&amp;spn=0.028924,0.038495&amp;t=m&amp;z=14&amp;iwloc=&amp;output=embed"></iframe>
-  <div id="map-toggle" class="btn-wrapper"><div class="btn"><i class="typcn typcn-map"></i>TOGGLE MAP</div></div> -->
+
   
   <div id="contact-holder">
     <div class="row">
       <div class="large-12 columns text-center">
         <div class="page-header pad-bottom">
           <div class="box-heading">
-            SIGN UP NOW
+            SHOP 'TIL YOU DROP
           </div>
           <h1>GIMME MY <strong>NEWSFEED!</strong></h1>
           <div class="hr large-1 small-3"></div>
@@ -480,38 +519,7 @@
         </ul>
       </div>
       
-      <div class="large-7 columns">
-        <div id="contact-form">
-          <div id="name">
-            <div class="form-icon">
-              <i class="typcn typcn-user"></i>
-            </div>
-            <input id="form-name" type="text" placeholder="Name" />
-          </div>
-          
-          <div id="email">
-            <div class="form-icon">
-              <i class="typcn typcn-mail"></i>
-            </div>
-            <input id="form-email" type="text" placeholder="Email" />
-          </div>
 
-
-
-          
-          <div id="message">
-            <div class="form-icon">
-              <i class="typcn typcn-pencil"></i>
-            </div>
-            <textarea id="form-message" placeholder="Message"></textarea>
-          </div>
-          <div id="details-error" class="text-white"><i class="typcn typcn-warning">&nbsp;</i>Error: Please ensure all fields are completed correctly</div>
-          <div id="form-sent" class="text-white"><i class="typcn typcn-thumbs-up">&nbsp;</i>Thank you, your message has been sent!</div>
-          <div class="btn-wrapper"><div class="btn">SEND<i class="typcn typcn-arrow-right"></i></div></div>
-        </div>
-      </div>
-    </div>
-    
     <div class="row">
       <div class="large-12 columns text-center">
         <div id="footer">
@@ -523,12 +531,7 @@
         </div>
       </div>
     </div>
-    
-    
   </div><!-- end of contact holder -->
-  
-  
-  
 
 </section>
 
