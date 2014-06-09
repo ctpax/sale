@@ -6,10 +6,19 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-    @product = Product.create(params.require(:product).permit(:name, :price, :sale_price, :url, :imageurl, :brand, :list_id))
+    @product = Product.create(params.require(:product).permit(:name, :price, :sale_price, :url, :image_url, :brand, :list_id))
       redirect_to users_path
   end
 
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    respond_to do |format|
+      format.html { redirect_to "#"}
+      format.json { render json: { head: :ok } }
+    end
+  end 
 
    # <%= form_for :product, url: products_path do |f| %>
    #                          <%= collection_select :page, :list_id, current_user.lists, :id, :name %>
