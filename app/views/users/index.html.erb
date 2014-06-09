@@ -18,7 +18,7 @@
                     <div class="row collapse">
                       <%= form_tag users_path, :method => 'get' do %>
                       <div class="large-8 small-9 columns">
-                        <%= text_field_tag :category, params[:category], placeholder: "search" %>
+                        <%= text_field_tag :search, params[:search], placeholder: "search" %>
                       </div>
                       <div class="large-4 small-3 columns">
                         <%= submit_tag "Search", :name => nil, class: "button expand" %>
@@ -81,43 +81,89 @@
         </aside>
 
         <section class="main-section">
-            <div class="small-12 columns">
+            
+
+               <div class="small-8 columns">
+
+                  <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+
+                      <li ng-repeat="product in products">            
+                        <div class="thumbnail" ng-mouseenter="testHover();">
+                          <div class="caption">
+                            <p>{{product.name}}</p>
+                            <div class="small-8 columns"><select ng-model="currentList" ng-options="list.name for list in lists"></select></div>
+                            <button class="button radius tiny" ng-click="saveProduct(product, currentList);">Save</button>
+                             
+                            <h5><center><a ng-href="{{product.clickUrl}}" >Go</a></center></h5>                 
+                          </div>
+                          <img ng-src="{{product.image.sizes.IPhone.url}}" >
+                        </div>
+                      </li>
+
+                  </ul>
+
+                </div>
+                
+               <div class="small-4 columns" style="background-color: #999">
 
 
-              <br><br>
-              <form ng-submit="saveList();">
+
+                <h1>Lists</h1>
+
+                <form ng-submit="saveList();">
                   
                   Name: <input ng-model="newList.name" name="quantity">
                   <input type="submit" value="Add New List!">
                 </form>
 
-               
-
-              <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
-
+              <accordion close-others="oneAtATime">
                 
-
-                  <li ng-repeat="product in products">            
-                    <div class="thumbnail">
-                      <div>
-                        <h5>{{product.name}}</h5>
-                        <select ng-model="currentList" ng-options="list.name for list in lists"></select><br>
-                        <button class="button" ng-click="saveProduct(product, currentList);">Save</button>
-                         
-                        <h5><center><a ngHref="{{product.clickUrl}}" >Go</a></center></h5>                 
+                  
+                    <accordion-group heading="{{list.name}}" ng-repeat="list in lists">
+                    
+                      <div ng-repeat="product in list.products">
+                          <div>
+                            <h5>{{product.name}}</h5>
+                            <img ng-src="{{product.image_url}}">
+                            <h5><center><a ng-href="{{product.url}}" >Go</a></center></h5>
+                            <p>Price: {{product.price}}</p>   
+                            <p>Sale Price: {{product.sale_price}}</p>
+                            <!-- <div ng-click="deleteProduct($parent.$index,$index);" class="button radius tiny">Remove from list</div>        -->
+                            
+                          </div>
+                       
+                        
                       </div>
-                      <img ng-src="{{product.image.sizes.IPhone.url}}" >
-                    </div>
-                  </li>
+                      <div class="button radius small" ng-click="deleteList(list)">Delete this list</div>
 
-               
+                    </accordion-group>
+                  
+                
+              </accordion>
 
-              </ul>
 
-            <p>Stuff at the bottom</p>
-            </div>
+
+               </div>
+
+            
+            
         </section>
 
         <a class="exit-off-canvas"></a>
     </div>
 </div>
+
+
+<div class="row">
+        <div class="col-md-3">            
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4>Thumbnail Headline</h4>
+                    <p>short thumbnail description</p>
+                    <p><a href="" class="label label-danger" rel="tooltip" title="Zoom">Zoom</a>
+                    <a href="" class="label label-default" rel="tooltip" title="Download now">Download</a></p>
+                </div>
+                <img src="http://lorempixel.com/400/300/sports/4/" alt="...">
+            </div>
+      </div>        
+    </div>
