@@ -1,4 +1,26 @@
+- OMGNEED -
 Your personalized real-time shopping newsfeed.
 
-GENERAL ASSEMBLY - May 2014.
+Search for your favorite brands and stores. Save items that you like to your personal lists.
+
+Demo: http://www.omgneed.herokuapp.com
+______________________________________
+
+To run:
+Git clone this repo.
+Make sure PostgreSQL is installed and running locally.
+
+On Terminal, enter:
+bundle install
+rake db:create
+rake db:migrate
+rails s
+
+Go to http://localhost:3000 . 
+
+______________________________________
+
+© GENERAL ASSEMBLY Los Angeles - May 2014.
 By Colin Campbell, Eric Wu & Christie Hua
+
+Built with Ruby on Rails, AngularJS, PostgreSQL, Foundation, HTTParty, ShopStyle API, Rspec testing and jQuery.
