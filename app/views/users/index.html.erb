@@ -1,139 +1,84 @@
 <div class="off-canvas-wrap" x-ng-controller='ListsCtrl'>
   <div class="inner-wrap">
     <nav id="nav">
-            
       <div class="row">
-
         <div class="small-4 columns">
           <ul class="navigation">
             <li class="has-form">
               <div class="row collapse">
-                
                 <div class="large-8 small-8 columns">
                   <input type="text" placeholder="Search for Products" ng-model="productSearch">
                 </div>
                 <div class="large-4 small-4 columns">
                   <button ng-click="search(productSearch)" class="button radius tiny">Go</button><br/>
                 </div>
-
-               
               </div>
             </li>
           </ul> 
         </div>
-        
-
         <div class="small-4 columns text-center">
           <a href="/"><h3 id="logo">OMG<strong>NEED</strong></h3></a>
         </div>
-        
         <div class="small-4 columns">
           <ul class="navigation">
             <li><%= link_to "LOGOUT " + current_user.email, session_path(session), method: :delete %></li>
           </ul>
         </div>
       </div>
-        
     </nav>           
             
-            
-
     <section class="main-section" style="padding-top:90px;">
-
-            
-
-               <div class="small-6 medium-8 columns" style="height:600px;overflow:scroll">
-
-                  <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
-
-                      <li ng-repeat="product in products">            
-                        <div class="thumbnail" ng-mouseenter="testHover();">
-                          <div class="caption">
-                            <p><strong>{{product.name}}</</strong><p>
-                            <div class="small-8 columns">
-                              <center><select ng-model="currentList" ng-options="list.name for list in lists">
-                                <option value="">-- choose list --</option>
-                              </select></center>
-                            </div>
-                            <button class="button radius tiny" ng-click="saveProduct(product, currentList);">Save</button>
-                            <p><strong><i>Reg</i> {{product.priceLabel}} | <i>Sale</i> {{product.salePriceLabel}}</strong><p>
-                            <center><a ng-href="{{product.clickUrl}}" class="button radius tiny alert">Go</a></center>                 
-                          </div>
-                          <center><img ng-src="{{product.image.sizes.IPhone.url}}" ></center>
-                        </div>
-                      </li>
-
-                  </ul>
-
+      <div class="small-6 medium-8 columns" style="height:600px;overflow:scroll">
+        <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+          <li ng-repeat="product in products">            
+            <div class="thumbnail" ng-mouseenter="testHover();">
+              <div class="caption">
+                <p><strong>{{product.name}}</</strong><p>
+                <div class="small-8 columns">
+                  <center><select ng-model="currentList" ng-options="list.name for list in lists">
+                    <option value="">-- choose list --</option>
+                  </select></center>
                 </div>
-                
-               <div class="small-6 medium-4 columns" style="height:600px;overflow:scroll">
-
-
-
-                <h5><center>My Lists</center></h5>
-
-                
-
-              <accordion close-others="oneAtATime">
-                
-                  
-                    <accordion close-others="oneAtATime">
-                
-                  
-                    <accordion-group heading="{{list.name}}" ng-repeat="list in lists">
-                    
-                      <div ng-repeat="product in list.products">
-                          <ul class="pricing-table">
-                            <li class="title" ng-click="showDetails = !showDetails">{{product.name}}</li>
-                            <div ng-show="showDetails">
-                              <li class="bullet-item">Price: {{product.price}}</li>
-                              <li class="bullet-item">Sale Price: {{product.sale_price}}</li>
-                              <li class="description"><img ng-src="{{product.image_url}}"></li>
-                              <li class="cta-button"><a class="button" ng-href="{{product.url}}">Go</a></li>
-                            </div>
-                          </ul>
-                          
-                          <!-- <div >
-                            
-                            
-                            <div ng-click="deleteProduct($parent.$index,$index);" class="button radius tiny">Remove from list</div>       
-                            
-                          </div> -->
-                       
-                        
-                      </div>
-                      <center><div class="button radius small alert" ng-click="deleteList(list)">Delete this list</div></center>
-
-                    </accordion-group>
-                  
-                
-              </accordion>
-                  
-                
-              </accordion>
-              <div class="row collapse">
-                <div class="small-12 columns">
-                  <form ng-submit="saveList();" >
-                    <center>
-                      <input ng-model="newList.name" placeholder="List Name">
-                      <input type="submit" value="Add New List!" class="button radius tiny">
-                    </center>
-                  </form>
-                </div>
-              
+                <button class="button radius tiny" ng-click="saveProduct(product, currentList);">Save</button>
+                <p><strong><i>Reg</i> {{product.priceLabel}} | <i>Sale</i> {{product.salePriceLabel}}</strong><p>
+                <center><a ng-href="{{product.clickUrl}}" class="button radius tiny alert">Go</a></center>                 
               </div>
-
-
-
-               </div>
-
-            
-            
-        </section>
-        
-        
-       
+              <center><img ng-src="{{product.image.sizes.IPhone.url}}" ></center>
+            </div>
+          </li>
+        </ul>
+      </div>
+              
+      <div class="small-6 medium-4 columns" style="height:600px;overflow:scroll">
+        <h5><center>My Lists</center></h5>
+        <accordion close-others="oneAtATime">
+          <accordion-group heading="{{list.name}}" ng-repeat="list in lists">
+            <div ng-repeat="product in list.products">
+              <ul class="pricing-table">
+                <li class="title" ng-click="showDetails = !showDetails">{{product.name}}</li>
+                <div ng-show="showDetails">
+                  <li class="bullet-item">Price: {{product.price}}</li>
+                  <li class="bullet-item">Sale Price: {{product.sale_price}}</li>
+                  <li class="description"><img ng-src="{{product.image_url}}"></li>
+                  <li class="cta-button"><a class="button" ng-href="{{product.url}}">Go</a></li>
+                </div>
+              </ul>
+            </div>
+            <center><div class="button radius small alert" ng-click="deleteList(list)">Delete this list</div></center>
+          </accordion>
+        </accordion>
+        <div class="row collapse">
+          <div class="small-12 columns">
+            <form ng-submit="saveList();" >
+              <center>
+                <input ng-model="newList.name" placeholder="List Name">
+                <input type="submit" value="Add New List!" class="button radius tiny">
+              </center>
+            </form>
+          </div>
+        </div>
+      </div> 
+    </section>
   </div>
 </div>
 

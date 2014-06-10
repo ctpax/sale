@@ -39,23 +39,16 @@
         <li><a class="scroll" href="#services-nav">ABOUT</a></li>
         <% if current_user %>
             <li><%= link_to "MY FEED", users_path %></li>
-            <li><%= link_to "LOGOUT", session_path(session), method: :delete %>
-            </li>
+            <li><%= link_to "LOGOUT", session_path(session), method: :delete %></li>
           <% else %>
-            <li>
-              <%= link_to "SIGN UP", new_user_path %>
-            </li>
-            <li>
-              <%= link_to "SIGN IN", new_session_path %>
-            </li>
+            <li><%= link_to "SIGN UP", new_user_path %></li>
+            <li><%= link_to "SIGN IN", new_session_path %></li>
           <% end %>
       </ul>
     </div>
   </div>
 
 </section>
-
-
 
 <div id="quote-divider" style="background-image: url('http://www.designsnext.com/wp-content/uploads/2014/02/fashion-photography-7.jpg')" >
   <div class="row">
@@ -160,68 +153,67 @@
 
 <section id="clients" style="background-image: url('http://images.fineartamerica.com/images-medium-large/new-york-city-skyline-sunrise-stephanie-mcdowell.jpg')">
 
-<div id="clients" style="background-image: url('http://images.fineartamerica.com/images-medium-large/new-york-city-skyline-sunrise-stephanie-mcdowell.jpg')" >
+  <div id="clients" style="background-image: url('http://images.fineartamerica.com/images-medium-large/new-york-city-skyline-sunrise-stephanie-mcdowell.jpg')" >
 
-  <div class="row">
-    <div class="large-12 columns text-center">
-      <h3 class="text-white">BRANDS THAT YOU LOVE <i class="typcn typcn-heart-outline">&nbsp;</i></h3>
-      <div class="hr large-1 small-3"></div>
+    <div class="row">
+      <div class="large-12 columns text-center">
+        <h3 class="text-white">BRANDS THAT YOU LOVE <i class="typcn typcn-heart-outline">&nbsp;</i></h3>
+        <div class="hr large-1 small-3"></div>
+      </div>
     </div>
-  </div>
-  
-  <div class="row">
     
-    
-  
+    <div class="row">
 
-    <div class="large-4 columns">
-      <div class="work-item" data-project-id="project-1">
-        <div class="work-img-holder">
-          <img alt="Work Image" src="http://www.designsnext.com/wp-content/uploads/2014/02/fashion-photography-7.jpg" />
-          <div class="work-overlay">
-            <h6>NEIMAN MARCUS</h6>
-            <div class="hr large-2 small-2"></div>
+      <div class="large-4 columns">
+        <div class="work-item" data-project-id="project-1">
+          <div class="work-img-holder">
+            <img alt="Work Image" src="http://www.designsnext.com/wp-content/uploads/2014/02/fashion-photography-7.jpg" />
+            <div class="work-overlay">
+              <h6>NEIMAN MARCUS</h6>
+              <div class="hr large-2 small-2"></div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="large-4 columns">
+        <div class="work-item" data-project-id="project-1">
+          <div class="work-img-holder">
+           <!--  <img alt="Work Image" src="http://nastygal.affiliatetechnology.com/images/logo_01.jpg" /> -->
+            <img alt="Work Image" src=" http://blog.nastygal.com/wp-content/uploads/2012/07/lais.jpg" />
+           
+            <div class="work-overlay">
+              <h6>NASTY GAL</h6>
+              <div class="hr large-2 small-2"></div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+       <div class="large-4 columns">
+        <div class="work-item" data-project-id="project-1">
+          <div class="work-img-holder">
+            <img alt="Work Image" src="http://www.wwd.com/images/processed/wwd/2012/08/27/memo-forever21/landscape/02-tout/forever2104.jpg" />
+            <div class="work-overlay">
+              <h6>FOREVER 21</h6>
+              <div class="hr large-2 small-2"></div>
             
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    
-    <div class="large-4 columns">
-      <div class="work-item" data-project-id="project-1">
-        <div class="work-img-holder">
-         <!--  <img alt="Work Image" src="http://nastygal.affiliatetechnology.com/images/logo_01.jpg" /> -->
-          <img alt="Work Image" src=" http://blog.nastygal.com/wp-content/uploads/2012/07/lais.jpg" />
-         
-          <div class="work-overlay">
-            <h6>NASTY GAL</h6>
-            <div class="hr large-2 small-2"></div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    
-     <div class="large-4 columns">
-      <div class="work-item" data-project-id="project-1">
-        <div class="work-img-holder">
-          <img alt="Work Image" src="http://www.wwd.com/images/processed/wwd/2012/08/27/memo-forever21/landscape/02-tout/forever2104.jpg" />
-          <div class="work-overlay">
-            <h6>FOREVER 21</h6>
-            <div class="hr large-2 small-2"></div>
-          
-          </div>
-        </div>
-      </div>
+      
     </div>
     
   </div>
-  
-  </div>
-  </section>
+</section>
+
 </section>
 
 <a id="work-nav"></a>
+
 <section id="work" class="pad-large">
 
   <div class="row">
@@ -310,16 +302,11 @@
           <div class="work-overlay">
             <h6>SAKS FIFTH AVENUE</h6>
             <div class="hr large-2 small-2"></div>
-
           </div>
         </div>
       </div>
     </div>
-    
   </div>
-  
-  
-
   
 </section>
 
@@ -327,9 +314,8 @@
 <a id="contact-nav"></a>
 <section id="contact">
 
-
-  
   <div id="contact-holder">
+
     <div class="row">
       <div class="large-12 columns text-center">
         <div class="page-header pad-bottom">
@@ -344,21 +330,18 @@
     
     <div class="row">
       <div class="large-5 columns">
-     
         </p>
         <ul id="contact-details">
           <li><i class="typcn typcn-location-outline">&nbsp;</i>made with love in los angeles.</li>
           <li><i class="typcn typcn-social-twitter">&nbsp;</i>General Assembly</li>
         </ul>
       </div>
-      
 
     <div class="row">
       <div class="large-12 columns text-center">
         <div id="footer">
           <div class="hr large-1 small-3"></div>
           <ul id="footer-social">
-         
           </ul>
           <div id="copy-text">&copy;&nbsp;&nbsp;<span class="logo-text">OMGNEED</span>&nbsp;&nbsp;2014</div>
         </div>
