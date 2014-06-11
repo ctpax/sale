@@ -6,7 +6,9 @@ Search for your favorite brands and stores. Save items that you like to your per
 
 Demo: http://www.omgneed.herokuapp.com
 
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 To run:
 Git clone this repo.
@@ -22,7 +24,9 @@ Go to http://localhost:3000 .
 
 Demo: http://www.omgneed.herokuapp.com
 
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 © GENERAL ASSEMBLY Los Angeles - May 2014.
 By Colin Campbell, Eric Wu & Christie Hua
