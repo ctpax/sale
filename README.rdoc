@@ -1,10 +1,10 @@
-- OMGNEED -
+OMGNEED 
 Your personalized real-time shopping newsfeed.
 
 Search for your favorite brands and stores. Save items that you like to your personal lists.
 
 Demo: http://www.omgneed.herokuapp.com
-______________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To run:
 Git clone this repo.
@@ -18,7 +18,9 @@ rails s
 
 Go to http://localhost:3000 . 
 
-______________________________________
+Demo: http://www.omgneed.herokuapp.com
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 © GENERAL ASSEMBLY Los Angeles - May 2014.
 By Colin Campbell, Eric Wu & Christie Hua
