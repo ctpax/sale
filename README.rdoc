@@ -4,6 +4,7 @@ Your personalized real-time shopping newsfeed.
 Search for your favorite brands and stores. Save items that you like to your personal lists.
 
 Demo: http://www.omgneed.herokuapp.com
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To run:
