@@ -36,4 +36,4 @@ Demo: http://www.omgneed.herokuapp.com
 © GENERAL ASSEMBLY Los Angeles - May 2014.
 By Colin Campbell, Eric Wu & Christie Hua
 
-Built with Ruby on Rails, AngularJS, PostgreSQL, Foundation, HTTParty, ShopStyle API, Rspec testing and jQuery.
+Built with Ruby on Rails, AngularJS, PostgreSQL, Zurb Foundation, HTTParty, ShopStyle API, RSpec, and jQuery.
