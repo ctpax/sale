@@ -28,7 +28,7 @@
     </nav>           
             
     <section class="main-section" style="padding-top:90px;">
-      <div class="small-6 medium-8 columns" style="height:600px;overflow:scroll">
+      <div class="small-6 medium-8 columns" style="height:100%;overflow:scroll">
         <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
           <li ng-repeat="product in products">            
             <div class="thumbnail" ng-mouseenter="testHover();">
@@ -49,7 +49,7 @@
         </ul>
       </div>
               
-      <div class="small-6 medium-4 columns" style="height:600px;overflow:scroll">
+      <div class="small-6 medium-4 columns" style="height:100%;overflow:scroll">
         <h5><center>My Lists</center></h5>
         <accordion close-others="oneAtATime">
           <accordion-group heading="{{list.name}}" ng-repeat="list in lists">
